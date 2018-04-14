@@ -1,0 +1,129 @@
+<div class="container">
+  <div class="imgcontainer text-center">
+      <h2>Join Now</h2>
+  </div>
+  <br>
+  <form class="form-horizontal appointment" >
+      <div class="form-group">
+          <label class="control-label col-sm-1 col-xs-1" for="firstname">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="text" class="form-control" id="FirstName" [(ngModel)]="registerUserData.firstname" placeholder="First Name" name="firstname">
+              <label>First Name*</label>
+          </div>
+          <label class="control-label col-sm-1 col-xs-1" for="lastname">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="text" class="form-control" id="LastName" [(ngModel)]="registerUserData.lastname" placeholder="Last Name" name="lastname">
+              <label>Last Name*</label>
+              
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-sm-1 col-xs-1" for="email">
+              <i class="glyphicon glyphicon-user reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="email" class="form-control" id="email" [(ngModel)]="registerUserData.email" placeholder="Email" name="email">
+              <label>Email*</label>
+              
+          </div>
+          <label class="control-label col-sm-1 col-xs-1" for="password">
+              <i class="glyphicon glyphicon-lock reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="password" class="form-control" id="password" [(ngModel)]="registerUserData.password" placeholder="Password" name="pwd">
+              <label>Password*</label>
+              
+          </div>
+      </div>
+      <div class="form-group">
+          <label class="control-label col-sm-1 col-xs-1" for="role">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-11">
+              <select class="form-control role" id="sel1" [(ngModel)]='registerUserData.role'  name="role">
+                  <option>Select your profile</option>  
+                <option class='option' *ngFor='let option of doctorsType' [value]="option">{{option}}</option>
+              </select>
+              <!-- <select class="form-control role" id="sel1" onchange="phy()">
+                  <option disabled hidden selected>Select your profile</option>
+                  <option>Patient</option>
+                  <option>Physician</option>
+              </select> -->
+              <label>Select Role*</label>
+          </div>
+      </div>
+      <div class="form-group"  *ngIf="registerUserData.role == 'Physician'">
+          <label class="control-label col-sm-1 col-xs-1" for="npi">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="text" class="form-control" id="NPI" [(ngModel)]='registerUserData.npi' placeholder="NPI" name="npi">
+              <label>NPI*</label>
+              
+          </div>
+          <label class="control-label col-sm-1 col-xs-1" for="location">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="text" class="form-control" id="Location" [(ngModel)]='registerUserData.location' placeholder="Location*" name="location">
+              <label>Location</label>
+              
+          </div>
+          <label class="control-label col-sm-1 col-xs-1" for="add1">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="text" class="form-control" id="add1" [(ngModel)]='registerUserData.add1' placeholder="address1" name="add1">
+              <label>address1</label>
+              
+          </div>
+          <label class="control-label col-sm-1 col-xs-1" for="add2">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="text" class="form-control" id="add2" [(ngModel)]='registerUserData.add2' placeholder="address2" name="add2">
+              <label>address2</label>
+          </div>
+          <label class="control-label col-sm-1 col-xs-1" for="city">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="text" class="form-control" id="City" [(ngModel)]='registerUserData.city' placeholder="City" name="city">
+              <label>City</label>
+          </div>
+          <label class="control-label col-sm-1 col-xs-1" for="pincode">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="text" class="form-control" id="Pincode" [(ngModel)]='registerUserData.pincode' placeholder="Pincode*" name="pincode">
+              <label>Pincode*</label>
+          </div>
+          <label class="control-label col-sm-1 col-xs-1" for="state">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="text" class="form-control" id="Satet" [(ngModel)]='registerUserData.state' placeholder="State" name="state">
+              <label>State</label>
+          </div>
+          <label class="control-label col-sm-1 col-xs-1" for="country">
+              <i class="glyphicon glyphicon-pencil reg1"></i>
+          </label>
+          <div class="col-xs-5">
+              <input type="text" class="form-control" id="Country" [(ngModel)]='registerUserData.country' placeholder="Country" name="country">
+              <label>Country</label>
+          </div>
+      </div>
+      <div class="form-group">
+          <div>
+              <button (click)="registerUser()">SIGN UP</button>
+          </div>
+          <div class="Opt-Login">
+              Already have account? <a routerLink="/login" class="redirect-login">LOGIN</a>
+          </div>
+      </div>
+  </form>
+</div>
